@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.wrapper-main {
+    height: 680px;
+}
+
+.-ml-center-wrapper {
+    margin-left: -4rem !important;
+}
+.-mr-center-wrapper {
+    margin-right: -4rem !important;
+}
+.font-size-40dvw {
+    font-size: 38dvw;
+}

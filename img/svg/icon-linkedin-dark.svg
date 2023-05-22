@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(0.5,0,0,0.5,0,0)">
+        <g id="Page-1">
+            <g id="Artboard">
+                <g id="icon-linkedin-dark">
+                    <path id="Shape" d="M7.163,32L0.529,32L0.529,10.635L7.163,10.635L7.163,32ZM3.842,7.721C1.721,7.721 0,5.964 0,3.842C0,1.72 1.72,0 3.842,0C5.964,0 7.684,1.72 7.684,3.842C7.684,5.964 5.963,7.721 3.842,7.721ZM32,32L25.373,32L25.373,21.6C25.373,19.121 25.323,15.942 21.924,15.942C18.474,15.942 17.946,18.635 17.946,21.421L17.946,32L11.319,32L11.319,10.635L17.681,10.635L17.681,13.55L17.774,13.55C18.66,11.871 20.824,10.1 24.051,10.1C30.766,10.1 32,14.521 32,20.264L32,32Z" style="fill:rgb(16,36,41);fill-rule:nonzero;"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
