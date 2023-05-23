@@ -24,3 +24,12 @@
     background-size: cover;
     background-repeat: no-repeat;
 }
+
+.min-h-4em {
+    min-height: 4em;
+}
+
+.bg-image-radial {
+    background-color: hsla(0, 0%, 100%, 0.5);
+    background-image: radial-gradient(circle farthest-corner at 50% 50%, hsla(0, 0%, 100%, 0.5) 25%, rgba(19, 134, 235, 0.25))
+}
