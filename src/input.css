@@ -9,9 +9,18 @@
 .-ml-center-wrapper {
     margin-left: -4rem !important;
 }
+
 .-mr-center-wrapper {
     margin-right: -4rem !important;
 }
+
 .font-size-40dvw {
     font-size: 38dvw;
+}
+
+.bg-img-video  {
+    background-image: url(./../img/img-video.webp);
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
