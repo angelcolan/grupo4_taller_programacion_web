@@ -2,25 +2,15 @@
   "name": "grupo4_taller_programacion_web",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
-    "tw:build": "tailwindcss build ./src/css/tailwind.css -o ./public/css/tailwind.css",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/angelcolan/grupo4_taller_programacion_web.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/angelcolan/grupo4_taller_programacion_web/issues"
-  },
-  "homepage": "https://github.com/angelcolan/grupo4_taller_programacion_web#readme",
   "devDependencies": {
     "autoprefixer": "^10.4.14",
     "postcss": "^8.4.23",
-    "tailwindcss": "^3.3.2"
+    "tailwindcss": "^3.3.2",
+    "vite": "^4.3.2"
   }
 }
