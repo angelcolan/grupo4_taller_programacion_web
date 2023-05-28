@@ -32,7 +32,7 @@ const router = async () => {
 
     const view = new match.route.view(getParams(match));
 
-    document.querySelector("#app").innerHTML = await view.getHtml();
+    document.querySelector("#app").innerHTML = await view.render();
 };
 
 export default router;
