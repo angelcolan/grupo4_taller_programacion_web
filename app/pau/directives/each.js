@@ -29,7 +29,7 @@ const mutationHandlers = {
         m.args.forEach(function (data, i) {
             const pau = self.buildItem(data, i),
                 ref = self.collection.length > m.args.length
-                    ? self.collection[m.args.length].$ghi.el
+                    ? self.collection[m.args.length].$pau.el
                     : self.marker
             self.container.insertBefore(pau.el, ref)
         })
@@ -53,7 +53,7 @@ const mutationHandlers = {
                 var pau = self.buildItem(data, index + i),
                     pos = index - removed + added + 1,
                     ref = self.collection[pos]
-                        ? self.collection[pos].$ghi.el
+                        ? self.collection[pos].$pau.el
                         : self.marker
                 self.container.insertBefore(pau.el, ref)
             })
@@ -66,7 +66,7 @@ const mutationHandlers = {
         const self = this
         self.collection.forEach(function (scope, i) {
             scope.$index = i
-            self.container.insertBefore(scope.$ghi.el, self.marker)
+            self.container.insertBefore(scope.$pau.el, self.marker)
         })
     }
 }
@@ -145,7 +145,7 @@ export default {
         if (this.collection && this.collection.length) {
             const fn = rm ? '_destroy' : '_unbind'
             this.collection.forEach(function (scope) {
-                scope.$ghi[fn]()
+                scope.$pau[fn]()
             })
             this.collection = null
         }

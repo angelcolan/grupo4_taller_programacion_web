@@ -30,11 +30,11 @@ function Pau(el, options) {
         || {}
     el.removeAttribute(dataPrefix)
 
-    if (scope.$ghi) {
+    if (scope.$pau) {
         scope = this.scope = scope.$dump()
     }
 
-    scope.$ghi = this
+    scope.$pau = this
     scope.$destroy = this._destroy.bind(this)
     scope.$dump = this._dump.bind(this)
     scope.$index = options.index
