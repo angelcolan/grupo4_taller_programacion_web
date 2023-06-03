@@ -1,9 +1,9 @@
-import Ghi from './ghi/main.js';
+import Pau from './pau/main.js';
 import './main.css'
 
 import {scrollToId} from './utils.js';
 
-Ghi.controller('Todos', function (scope) {
+Pau.controller('Todos', function (scope) {
     scope.goToAbout = function () {
         scrollToId('about');
     }
@@ -13,4 +13,4 @@ Ghi.controller('Todos', function (scope) {
     }
 })
 
-Ghi.bootstrap()
+Pau.bootstrap()

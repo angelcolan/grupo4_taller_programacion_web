@@ -24,9 +24,9 @@ export default {
     fn: true,
 
     bind: function () {
-        if (this.ghi.each) {
+        if (this.pau.each) {
             this.selector = '[' + this.directiveName + '*="' + this.expression + '"]'
-            this.delegator = this.ghi.el.parentNode
+            this.delegator = this.pau.el.parentNode
         }
     },
 
@@ -44,10 +44,10 @@ export default {
                 delegator[selector] = function (e) {
                     const target = delegateCheck(e.target, delegator, selector)
                     if (target) {
-                        handler.call(self.ghi.scope, {
+                        handler.call(self.pau.scope, {
                             originalEvent: e,
                             el: target,
-                            scope: target.ghi.scope
+                            scope: target.pau.scope
                         })
                     }
                 }
@@ -58,10 +58,10 @@ export default {
 
             // a normal handler
             this.handler = function (e) {
-                handler.call(self.ghi.scope, {
+                handler.call(self.pau.scope, {
                     originalEvent: e,
                     el: e.currentTarget,
-                    scope: self.ghi.scope
+                    scope: self.pau.scope
                 })
             }
             this.el.addEventListener(event, this.handler)

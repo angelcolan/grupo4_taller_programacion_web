@@ -37,7 +37,7 @@ export default {
         bind: function () {
             const el = this.el, self = this
             this.change = function () {
-                self.ghi.scope[self.key] = el.value
+                self.pau.scope[self.key] = el.value
             }
             el.addEventListener('change', this.change)
         },
@@ -53,7 +53,7 @@ export default {
         bind: function () {
             const el = this.el, self = this
             this.change = function () {
-                self.ghi.scope[self.key] = el.checked
+                self.pau.scope[self.key] = el.checked
             }
             el.addEventListener('change', this.change)
         },

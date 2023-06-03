@@ -1,5 +1,5 @@
 import config from './config.js';
-import Ghi from './ghi.js';
+import Pau from './pau.js';
 import directives from './directives';
 import filters from './filters.js';
 
@@ -37,15 +37,15 @@ api.bootstrap = function (opts) {
     if (opts) {
         config.prefix = opts.prefix || config.prefix
     }
-    var app = {}, n = 0, el, ghi
+    var app = {}, n = 0, el, pau
     while (el = document.querySelector('[' + config.prefix + '-controller]')) {
-        ghi = new Ghi(el)
+        pau = new Pau(el)
         if (el.id) {
-            app['$' + el.id] = ghi
+            app['$' + el.id] = pau
         }
         n++
     }
-    return n > 1 ? app : ghi
+    return n > 1 ? app : pau
 }
 
 export default api;

@@ -93,7 +93,7 @@ function Directive(directiveName, expression) {
 
 Directive.prototype.refresh = function () {
     if (this.value) {
-        const value = this.value.call(this.ghi.scope)
+        const value = this.value.call(this.pau.scope)
         this._update(
             this.filters ? this.applyFilters(value) : value
         )

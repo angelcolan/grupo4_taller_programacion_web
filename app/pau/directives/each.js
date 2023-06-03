@@ -1,5 +1,5 @@
 import config from '../config.js';
-import Ghi from '../ghi.js';
+import Pau from '../pau.js';
 
 const augmentations = {
     remove: function (scope) {
@@ -17,8 +17,8 @@ const mutationHandlers = {
     push: function (m) {
         const self = this
         m.args.forEach(function (data, i) {
-            const ghi = self.buildItem(data, self.collection.length + i)
-            self.container.insertBefore(ghi.el, self.marker)
+            const pau = self.buildItem(data, self.collection.length + i)
+            self.container.insertBefore(pau.el, self.marker)
         })
     },
     pop: function (m) {
@@ -27,11 +27,11 @@ const mutationHandlers = {
     unshift: function (m) {
         const self = this
         m.args.forEach(function (data, i) {
-            const ghi = self.buildItem(data, i),
+            const pau = self.buildItem(data, i),
                 ref = self.collection.length > m.args.length
                     ? self.collection[m.args.length].$ghi.el
                     : self.marker
-            self.container.insertBefore(ghi.el, ref)
+            self.container.insertBefore(pau.el, ref)
         })
         self.reorder()
     },
@@ -50,12 +50,12 @@ const mutationHandlers = {
         })
         if (added > 0) {
             m.args.slice(2).forEach(function (data, i) {
-                var ghi = self.buildItem(data, index + i),
+                var pau = self.buildItem(data, index + i),
                     pos = index - removed + added + 1,
                     ref = self.collection[pos]
                         ? self.collection[pos].$ghi.el
                         : self.marker
-                self.container.insertBefore(ghi.el, ref)
+                self.container.insertBefore(pau.el, ref)
             })
         }
         if (removed !== added) {
@@ -98,7 +98,7 @@ export default {
     bind: function () {
         this.el.removeAttribute(config.prefix + '-each')
         const ctn = this.container = this.el.parentNode
-        this.marker = document.createComment('gh-each-' + this.arg)
+        this.marker = document.createComment('p-each-' + this.arg)
         ctn.insertBefore(this.marker, this.el)
         ctn.removeChild(this.el)
     },
@@ -117,17 +117,17 @@ export default {
             }
         })
         collection.forEach(function (data, i) {
-            var ghi = self.buildItem(data, i)
-            self.container.insertBefore(ghi.el, self.marker)
+            var pau = self.buildItem(data, i)
+            self.container.insertBefore(pau.el, self.marker)
         })
     },
 
     buildItem: function (data, index) {
         const node = this.el.cloneNode(true),
-            spore = new Ghi(node, {
+            spore = new Pau(node, {
                 each: true,
                 eachPrefixRE: new RegExp('^' + this.arg + '.'),
-                parentGhi: this.ghi,
+                parentGhi: this.pau,
                 index: index,
                 data: data
             })

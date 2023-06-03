@@ -6,14 +6,14 @@ const slice = Array.prototype.slice,
     ctrlAttr = config.prefix + '-controller',
     eachAttr = config.prefix + '-each'
 
-function Ghi(el, options) {
+function Pau(el, options) {
 
     if (typeof el === 'string') {
         el = document.querySelector(el)
     }
 
     this.el = el
-    el.ghi = this
+    el.pau = this
     this._bindings = {}
 
     // copy options
@@ -56,7 +56,7 @@ function Ghi(el, options) {
     }
 }
 
-Ghi.prototype._compileNode = function (node, root) {
+Pau.prototype._compileNode = function (node, root) {
     var self = this;
     if (node.nodeType === Node.TEXT_NODE) {
         self._compileTextNode(node)
@@ -70,12 +70,12 @@ Ghi.prototype._compileNode = function (node, root) {
             }
         } else if (ctrlExp && !root) {
             var id = node.id,
-                ghi = new Ghi(node, {
+                pau = new Pau(node, {
                     child: true,
                     parentGhi: self
                 })
             if (id) {
-                self['$' + id] = ghi
+                self['$' + id] = pau
             }
         } else { // normal node (non-controller)
 
@@ -114,14 +114,14 @@ Ghi.prototype._compileNode = function (node, root) {
 
 }
 
-Ghi.prototype._compileTextNode = function (node) {
+Pau.prototype._compileTextNode = function (node) {
     return TextNodeParser.parse(node)
 }
 
-Ghi.prototype._bind = function (node, directive) {
+Pau.prototype._bind = function (node, directive) {
 
     directive.el = node;
-    directive.ghi = this;
+    directive.pau = this;
 
     var key = directive.key,
         epr = this.eachPrefixRE,
@@ -174,7 +174,7 @@ Ghi.prototype._bind = function (node, directive) {
 
 }
 
-Ghi.prototype._createBinding = function (key) {
+Pau.prototype._createBinding = function (key) {
 
     var binding = {
         value: this.scope[key],
@@ -205,7 +205,7 @@ Ghi.prototype._createBinding = function (key) {
     return binding
 }
 
-Ghi.prototype._unbind = function () {
+Pau.prototype._unbind = function () {
     var unbind = function (instance) {
         if (instance.unbind) {
             instance.unbind()
@@ -216,7 +216,7 @@ Ghi.prototype._unbind = function () {
     }
 }
 
-Ghi.prototype._destroy = function () {
+Pau.prototype._destroy = function () {
     for (var key in this._bindings) {
         this._bindings[key].instances.forEach(unbind)
         delete this._bindings[key]
@@ -229,7 +229,7 @@ Ghi.prototype._destroy = function () {
     }
 }
 
-Ghi.prototype._dump = function () {
+Pau.prototype._dump = function () {
     var dump = {}, val,
         subDump = function (scope) {
             return scope.$dump()
@@ -262,4 +262,4 @@ function determinScope(key, scope) {
     return scope
 }
 
-export default Ghi;
+export default Pau;

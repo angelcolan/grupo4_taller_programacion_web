@@ -1,5 +1,5 @@
 export default {
-    prefix: 'gh',
+    prefix: 'p',
     controllers: {},
     datum: {},
     seeds: {}
