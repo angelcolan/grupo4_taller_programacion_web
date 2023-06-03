@@ -38,7 +38,7 @@ function Pau(el, options) {
     scope.$destroy = this._destroy.bind(this)
     scope.$dump = this._dump.bind(this)
     scope.$index = options.index
-    scope.$parent = options.parentGhi && options.parentGhi.scope
+    scope.$parent = options.parentPau && options.parentPau.scope
 
     // revursively process nodes for directives
     this._compileNode(el, true)
@@ -72,7 +72,7 @@ Pau.prototype._compileNode = function (node, root) {
             var id = node.id,
                 pau = new Pau(node, {
                     child: true,
-                    parentGhi: self
+                    parentPau: self
                 })
             if (id) {
                 self['$' + id] = pau
@@ -133,7 +133,7 @@ Pau.prototype._bind = function (node, directive) {
     }
 
     if (epr && !isEachKey) {
-        scope = this.parentGhi
+        scope = this.parentPau
     }
 
     var ownerScope = determinScope(directive, scope),

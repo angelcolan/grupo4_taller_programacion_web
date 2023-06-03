@@ -127,7 +127,7 @@ export default {
             spore = new Pau(node, {
                 each: true,
                 eachPrefixRE: new RegExp('^' + this.arg + '.'),
-                parentGhi: this.pau,
+                parentPau: this.pau,
                 index: index,
                 data: data
             })
