@@ -1,4 +1,4 @@
-export default function scrollToId(id, className = null, timeOut = null) {
+function scrollToId(id, className = null, timeOut = null) {
     const currentStepElement = document.getElementById(id);
     if (currentStepElement) {
         currentStepElement.scrollIntoView({
@@ -14,4 +14,7 @@ export default function scrollToId(id, className = null, timeOut = null) {
             }
         }
     }
+}
+export {
+    scrollToId
 }
