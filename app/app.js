@@ -1,5 +1,8 @@
 import Ghi from './ghi/main.js';
 import './main.css'
+
+import scrollToId from './utils.js';
+
 const todos = [
     { text: 'make nesting controllers work', done: true },
     { text: 'complete ArrayWatcher', done: false },
@@ -16,6 +19,14 @@ Ghi.controller('Todos', function (scope) {
     scope.remaining = todos.reduce(function (count, todo) {
         return count + (todo.done ? 0 : 1)
     }, 0)
+
+    scope.goToAbout = function () {
+        scrollToId('about');
+    }
+
+    scope.goToServices = function () {
+        scrollToId('services');
+    }
 
     // computed properties ----------------------------------------------------
     scope.total = function () {

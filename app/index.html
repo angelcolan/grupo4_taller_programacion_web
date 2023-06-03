@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 </head>
 <body class="bg-[#d8e7ec]">
-<section class="container mx-auto ">
+<section class="container mx-auto" id="todoapp" gh-controller="Todos">
     <header class="flex justify-between py-8 items-center border-b border-[#b4d0d6]">
         <div class="text-4xl text-center font-extrabold flex font-['Anton'] items-center">
             <div class="w-6 h-16 border-t border-l border-b border-[#102429]"></div>
@@ -18,8 +18,8 @@
             <div class="w-6 h-16 border-t border-r border-b border-[#102429]"></div>
         </div>
         <div class="flex justify-between space-x-8 font-extrabold uppercase items-center">
-            <p class="cursor-pointer">Nosotros</p>
-            <p class="cursor-pointer">Servicios</p>
+            <p class="cursor-pointer" gh-on="click:goToAbout">Nosotros</p>
+            <p class="cursor-pointer" gh-on="click:goToServices">Servicios</p>
             <p class="cursor-pointer">Galeria</p>
             <p class="cursor-pointer">Precios</p>
             <p class="cursor-pointer">Contacto</p>
@@ -159,7 +159,7 @@
             </div>
         </div>
     </section>
-    <section class="flex relative z-30 container mx-auto justify-center flex-col items-center text-white">
+    <section id="about" class="flex relative z-30 container mx-auto justify-center flex-col items-center text-white">
         <div class="relative z-20 w-16 h-px my-16 bg-[#1386eb]"></div>
         <div class="grid w-full pt-1 border-t border-b border-[#1d363d] grid-cols-2 text-center">
             <div class="px-16 border-r border-[#1d363d]">
@@ -197,7 +197,7 @@
         <div class="relative z-20 w-16 h-px my-16 bg-[#1386eb]"></div>
     </section>
 </section>
-<section class="bg-[#ffffff]">
+<section id="services" class="bg-[#ffffff]">
     <section class="flex relative z-30 container mx-auto justify-center flex-col items-center text-white">
         <div class="relative z-20 w-16 h-px my-16 bg-[#1386eb]"></div>
         <div class="flex w-4/6 max-w-4xl justify-between items-center flex-col pb-8 border-l border-r border-[#d9e6eb]">
