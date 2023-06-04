@@ -37,7 +37,8 @@ api.bootstrap = function (opts) {
     if (opts) {
         config.prefix = opts.prefix || config.prefix
     }
-    var app = {}, n = 0, el, pau
+    const app = {};
+    let n = 0, el, pau;
     while (el = document.querySelector('[' + config.prefix + '-controller]')) {
         pau = new Pau(el)
         if (el.id) {

@@ -44,10 +44,10 @@ function Pau(el, options) {
     this._compileNode(el, true)
 
     // if has controller, apply it
-    var ctrlID = el.getAttribute(ctrlAttr)
+    const ctrlID = el.getAttribute(ctrlAttr)
     if (ctrlID) {
         el.removeAttribute(ctrlAttr)
-        var controller = config.controllers[ctrlID]
+        const controller = config.controllers[ctrlID]
         if (controller) {
             controller.call(this, this.scope)
         } else {
@@ -57,19 +57,19 @@ function Pau(el, options) {
 }
 
 Pau.prototype._compileNode = function (node, root) {
-    var self = this;
+    const self = this;
     if (node.nodeType === Node.TEXT_NODE) {
         self._compileTextNode(node)
     } else if (node.nodeType !== Node.COMMENT_NODE) {
-        var eachExp = node.getAttribute(eachAttr),
+        const eachExp = node.getAttribute(eachAttr),
             ctrlExp = node.getAttribute(ctrlAttr)
         if (eachExp) {
-            var binding = DirectiveParser.parse(eachAttr, eachExp)
+            const binding = DirectiveParser.parse(eachAttr, eachExp)
             if (binding) {
                 self._bind(node, binding)
             }
         } else if (ctrlExp && !root) {
-            var id = node.id,
+            const id = node.id,
                 pau = new Pau(node, {
                     child: true,
                     parentPau: self
@@ -83,9 +83,9 @@ Pau.prototype._compileNode = function (node, root) {
             if (node.attributes && node.attributes.length) {
                 slice.call(node.attributes).forEach(function (attr) {
                     if (attr.name === ctrlAttr) return
-                    var valid = false
+                    let valid = false
                     attr.value.split(',').forEach(function (exp) {
-                        var binding = DirectiveParser.parse(attr.name, exp)
+                        const binding = DirectiveParser.parse(attr.name, exp)
                         if (binding) {
                             valid = true
                             self._bind(node, binding)
@@ -123,7 +123,7 @@ Pau.prototype._bind = function (node, directive) {
     directive.el = node;
     directive.pau = this;
 
-    var key = directive.key,
+    let key = directive.key,
         epr = this.eachPrefixRE,
         isEachKey = epr && epr.test(key),
         scope = this;
@@ -136,7 +136,7 @@ Pau.prototype._bind = function (node, directive) {
         scope = this.parentPau
     }
 
-    var ownerScope = determinScope(directive, scope),
+    const ownerScope = determinScope(directive, scope),
         binding =
             ownerScope._bindings[key] ||
             ownerScope._createBinding(key)
@@ -156,7 +156,7 @@ Pau.prototype._bind = function (node, directive) {
     // computed properties
     if (directive.deps) {
         directive.deps.forEach(function (dep) {
-            var depScope = determinScope(dep, scope),
+            const depScope = determinScope(dep, scope),
                 depBinding =
                     depScope._bindings[dep.key] ||
                     depScope._createBinding(dep.key)
@@ -176,7 +176,7 @@ Pau.prototype._bind = function (node, directive) {
 
 Pau.prototype._createBinding = function (key) {
 
-    var binding = {
+    const binding = {
         value: this.scope[key],
         changed: false,
         instances: []
@@ -206,22 +206,23 @@ Pau.prototype._createBinding = function (key) {
 }
 
 Pau.prototype._unbind = function () {
-    var unbind = function (instance) {
+    const unbind = function (instance) {
         if (instance.unbind) {
             instance.unbind()
         }
     }
-    for (var key in this._bindings) {
+    for (let key in this._bindings) {
         this._bindings[key].instances.forEach(unbind)
     }
 }
 
 Pau.prototype._destroy = function () {
-    for (var key in this._bindings) {
+    for (let key in this._bindings) {
         this._bindings[key].instances.forEach(unbind)
         delete this._bindings[key]
     }
     this.el.parentNode.remove(this.el)
+
     function unbind(instance) {
         if (instance.unbind) {
             instance.unbind()
@@ -230,11 +231,12 @@ Pau.prototype._destroy = function () {
 }
 
 Pau.prototype._dump = function () {
-    var dump = {}, val,
+    const dump = {};
+    let val,
         subDump = function (scope) {
             return scope.$dump()
         }
-    for (var key in this.scope) {
+    for (let key in this.scope) {
         if (key.charAt(0) !== '$') {
             val = this._bindings[key]
             if (!val) continue
@@ -250,13 +252,13 @@ Pau.prototype._dump = function () {
 
 function determinScope(key, scope) {
     if (key.nesting) {
-        var levels = key.nesting
-        while (scope.parentSeed && levels--) {
-            scope = scope.parentSeed
+        let levels = key.nesting
+        while (scope.parentPau && levels--) {
+            scope = scope.parentPau
         }
     } else if (key.root) {
-        while (scope.parentSeed) {
-            scope = scope.parentSeed
+        while (scope.parentPau) {
+            scope = scope.parentPau
         }
     }
     return scope
