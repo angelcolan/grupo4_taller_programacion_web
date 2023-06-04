@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 </head>
 <body class="bg-[#d8e7ec]">
+
 <section class="container mx-auto" p-controller="Todos">
     <header class="flex justify-between py-8 items-center border-b border-[#b4d0d6] animate__animated animate__fadeInDown">
         <div class="text-4xl text-center font-extrabold flex font-['Anton'] items-center">
@@ -20,9 +21,9 @@
         <div class="flex justify-between space-x-8 font-extrabold uppercase items-center">
             <p class="cursor-pointer" p-on="click:goToAbout">Nosotros</p>
             <p class="cursor-pointer" p-on="click:goToServices">Servicios</p>
-            <p class="cursor-pointer">Galeria</p>
-            <p class="cursor-pointer">Precios</p>
-            <p class="cursor-pointer">Contacto</p>
+            <p class="cursor-pointer" p-on="click:goToServices">Galeria</p>
+            <p class="cursor-pointer" p-on="click:goToPricing">Precios</p>
+            <p class="cursor-pointer" p-on="click:goToServices">Contacto</p>
             <div class="flex cursor-pointer">
                 <div class="bg-[#1486eb] px-10 py-5 text-white">
                     Reservar
@@ -56,7 +57,8 @@
                 <div class="flex font-size-40dvw items-center">S</div>
                 <div class="flex font-size-40dvw items-center">A</div>
             </div>
-            <h1 class="z-10 relative text-[#102429] text-[270px] animate__animated animate__zoomIn animate__fast">MAPISA</h1>
+            <h1 class="z-10 relative text-[#102429] text-[270px] animate__animated animate__zoomIn animate__fast">
+                MAPISA</h1>
         </div>
         <img src="./../img/car-image-hero.webp" alt="Car"
              class="absolute z-50 top-auto bottom-0 left-auto right-0 w-2/3 animate__animated animate__zoomIn animate__fast">
@@ -109,7 +111,9 @@
         </div>
     </section>
 </section>
-<section class="relative z-10 flex w-full bg-[#102429] flex-col items-center content-center animate__animated animate__fadeInUp">
+
+<section
+        class="relative z-10 flex w-full bg-[#102429] flex-col items-center content-center animate__animated animate__fadeInUp">
     <div class="bg-img-video relative z-10 flex container items-center justify-center py-32">
         <a href="#" class="relative z-30 w-32 h-32 flex items-center justify-center bg-[#1386eb]">
             <img src="./../img/svg/icon-play-light.svg" alt="Play video" class="h-8 w-8">
@@ -119,6 +123,7 @@
     </div>
     <div class="absolute z-0 left-0 right-0 top-0 bottom-auto bg-[#d8e7eb] h-32"></div>
 </section>
+
 <section class="bg-[#102429]">
     <section class="flex justify-between uppercase border-t border-b border-[#1d363d] container mx-auto text-white">
         <div class="flex items-center font-['Anton'] justify-center basis-1/4 gap-6 ">
@@ -197,6 +202,7 @@
         <div class="relative z-20 w-16 h-px my-16 bg-[#1386eb]"></div>
     </section>
 </section>
+
 <section id="services" class="bg-[#ffffff]">
     <section class="flex relative z-30 container mx-auto justify-center flex-col items-center text-white">
         <div class="relative z-20 w-16 h-px my-16 bg-[#1386eb]"></div>
@@ -318,11 +324,157 @@
             <a href=""
                class="w-full bg-[#1386eb] h-16 items-center font-bold flex z-50 flex-nowrap justify-center content-center px-4 uppercase">Contactanos</a>
         </div>
+    </section>
+</section>
+
+<section id="pricing" class="bg-[#ffffff]">
+    <section class="flex relative z-30 container mx-auto justify-center flex-col items-center">
+        <div class="relative z-20 w-16 h-px my-16 bg-[#1386eb]"></div>
+        <div class="flex w-4/6 max-w-4xl justify-between items-center flex-col pb-8 border-l border-r border-[#d9e6eb]">
+            <div class="relative px-8 min-h-4em">
+                <h2 class="relative z-10 mb-0 text-center text-[#102429] font-['Anton'] text-5xl uppercase">Precios
+                    Mapisa</h2>
+                <img src="./../img/svg/vector-brush-stroke.svg" alt=""
+                     class="absolute left-0 top-auto right-0 bottom-0 w-full object-cover rotate-180">
+            </div>
+        </div>
+        <div class="relative flex z-30 w-full flex-col items-center content-center max-w-screen-xl">
+            <div class="grid grid-cols-4 w-full border-t border-[#d9e6eb]">
+                <!--bg-[#d8e7eb]-->
+                <div CLASS="flex justify-center text-[#222222] font-bold h-16 items-center tracking-wide border-r border-[#d9e6eb]">
+                    <p>CARS</p>
+                </div>
+                <div CLASS="flex justify-center text-[#222222] font-bold h-16 items-center tracking-wide border-r border-[#d9e6eb]">
+                    <p>SUVS</p>
+                </div>
+                <div CLASS="flex justify-center text-[#222222] font-bold h-16 items-center tracking-wide border-r border-[#d9e6eb]">
+                    <p>TRUCKS</p>
+                </div>
+                <div CLASS="flex justify-center text-[#222222] font-bold h-16 items-center tracking-wide">
+                    <p>BIKES</p>
+                </div>
+            </div>
+            <div class="grid grid-cols-4">
+                <div class="border-t border-b border-r border-[#d9e6eb]">
+                    <div class="px-9">
+                        <div class="flex pt-8 pb-4 flex-col items-center">
+                            <div class="text-[#1386eb] font-['Anton'] tracking-[2.3px] mb-2 uppercase">Basico</div>
+                            <h5 class="text-[#102429] text-2xl font-extrabold font-['Anton'] tracking-wide">S/
+                                250.00</h5>
+                        </div>
+                        <div class="flex flex-col justify-center flex-1 text-center">
+                            <div class="flex-1 text-[#2e4a52] py-5 border-t border-b border-[#d9e6eb]">
+                                Pellentesque iaculis lorem
+                            </div>
+                            <div class="flex-1 text-[#2e4a52] py-5 border-b border-[#d9e6eb]">
+                                Nulla dictum lectus sed
+                            </div>
+                            <div class="flex-1 text-[#2e4a52] py-5 border-b border-[#d9e6eb]">
+                                Nullam non massa magna
+                            </div>
+                            <a href=""
+                               class="flex h-16 justify-center bg-transparent items-center uppercase font-bold border-b border-[#d9e6eb]">Agregar
+                                al carrito</a>
+                            <div class="flex-1 text-[#2e4a52] py-5 border-b border-[#d9e6eb] text-sm">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                incididunt.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="border-t border-b border-r border-[#d9e6eb]">
+                    <div class="px-9">
+                        <div class="flex pt-8 pb-4 flex-col items-center">
+                            <div class="text-[#1386eb] font-['Anton'] tracking-[2.3px] mb-2 uppercase">Standar</div>
+                            <h5 class="text-[#102429] text-2xl font-extrabold font-['Anton'] tracking-wide">S/
+                                250.00</h5>
+                        </div>
+                        <div class="flex flex-col justify-center flex-1 text-center">
+                            <div class="flex-1 text-[#2e4a52] py-5 border-t border-b border-[#d9e6eb]">
+                                Pellentesque iaculis lorem
+                            </div>
+                            <div class="flex-1 text-[#2e4a52] py-5 border-b border-[#d9e6eb]">
+                                Nulla dictum lectus sed
+                            </div>
+                            <div class="flex-1 text-[#2e4a52] py-5 border-b border-[#d9e6eb]">
+                                Nullam non massa magna
+                            </div>
+                            <a href=""
+                               class="flex h-16 justify-center bg-transparent items-center uppercase font-bold border-b border-[#d9e6eb]">Agregar
+                                al carrito</a>
+                            <div class="flex-1 text-[#2e4a52] py-5 border-b border-[#d9e6eb] text-sm">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                incididunt.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="border-t border-b border-r border-[#d9e6eb]">
+                    <div class="px-9">
+                        <div class="flex pt-8 pb-4 flex-col items-center">
+                            <div class="text-[#1386eb] font-['Anton'] tracking-[2.3px] mb-2 uppercase">Premiun</div>
+                            <h5 class="text-[#102429] text-2xl font-extrabold font-['Anton'] tracking-wide">S/
+                                250.00</h5>
+                        </div>
+                        <div class="flex flex-col justify-center flex-1 text-center">
+                            <div class="flex-1 text-[#2e4a52] py-5 border-t border-b border-[#d9e6eb]">
+                                Pellentesque iaculis lorem
+                            </div>
+                            <div class="flex-1 text-[#2e4a52] py-5 border-b border-[#d9e6eb]">
+                                Nulla dictum lectus sed
+                            </div>
+                            <div class="flex-1 text-[#2e4a52] py-5 border-b border-[#d9e6eb]">
+                                Nullam non massa magna
+                            </div>
+                            <a href=""
+                               class="flex h-16 justify-center bg-transparent items-center uppercase font-bold border-b border-[#d9e6eb]">Agregar
+                                al carrito</a>
+                            <div class="flex-1 text-[#2e4a52] py-5 border-b border-[#d9e6eb] text-sm">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                incididunt.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="border-t border-b border-[#d9e6eb]">
+                    <div class="px-9">
+                        <div class="flex pt-8 pb-4 flex-col items-center">
+                            <div class="text-[#1386eb] font-['Anton'] tracking-[2.3px] mb-2 uppercase">Ultimate</div>
+                            <h5 class="text-[#102429] text-2xl font-extrabold font-['Anton'] tracking-wide">S/
+                                250.00</h5>
+                        </div>
+                        <div class="flex flex-col justify-center flex-1 text-center">
+                            <div class="flex-1 text-[#2e4a52] py-5 border-t border-b border-[#d9e6eb]">
+                                Pellentesque iaculis lorem
+                            </div>
+                            <div class="flex-1 text-[#2e4a52] py-5 border-b border-[#d9e6eb]">
+                                Nulla dictum lectus sed
+                            </div>
+                            <div class="flex-1 text-[#2e4a52] py-5 border-b border-[#d9e6eb]">
+                                Nullam non massa magna
+                            </div>
+                            <a href=""
+                               class="flex h-16 justify-center bg-transparent items-center uppercase font-bold border-b border-[#d9e6eb]">Agregar
+                                al carrito</a>
+                            <div class="flex-1 text-[#2e4a52] py-5 border-b border-[#d9e6eb] text-sm">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                incididunt.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="relative px-8 min-h-4em flex w-2/3 max-w-4xl justify-between items-end flex-col border-l border-r border-[#d9e6eb] pt-8 text-white">
+            <a href=""
+               class="w-full bg-[#1386eb] h-16 items-center font-bold flex z-50 flex-nowrap justify-center content-center px-4 uppercase">Contactanos</a>
+        </div>
         <div class="relative z-20 w-16 h-px my-16 bg-[#1386eb]"></div>
     </section>
 </section>
 
 <script type="module" src="app.js"></script>
+
 </body>
 
 </html>

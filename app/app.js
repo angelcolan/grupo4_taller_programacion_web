@@ -11,6 +11,10 @@ Pau.controller('Todos', function (scope) {
     scope.goToServices = function () {
         scrollToId('services');
     }
+
+    scope.goToPricing = function () {
+        scrollToId('pricing');
+    }
 })
 
 Pau.bootstrap()
