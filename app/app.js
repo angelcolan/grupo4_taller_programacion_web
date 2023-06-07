@@ -208,6 +208,10 @@ Pau.controller('Todos', function (scope) {
         scrollToId('pricing');
     }
 
+    scope.goToContact = function () {
+        scrollToId('contact');
+    }
+
     scope.selectPrice = function (event) {
         for (let i = 0; i < scope.prices.length; i++) {
             scope.prices[i].selected = false;

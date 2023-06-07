@@ -21,9 +21,8 @@
         <div class="flex justify-between space-x-8 font-extrabold uppercase items-center">
             <p class="cursor-pointer" p-on="click:goToAbout">Nosotros</p>
             <p class="cursor-pointer" p-on="click:goToServices">Servicios</p>
-            <p class="cursor-pointer" p-on="click:goToServices">Galeria</p>
             <p class="cursor-pointer" p-on="click:goToPricing">Precios</p>
-            <p class="cursor-pointer" p-on="click:goToServices">Contacto</p>
+            <p class="cursor-pointer" p-on="click:goToContact">Contacto</p>
             <div class="flex cursor-pointer">
                 <div class="bg-[#1486eb] px-10 py-5 text-white">
                     Reservar
@@ -195,7 +194,7 @@
                         Vivamus quis mi lorem.
                         Nunc condimentum, mi non dictum suscipit.
                     </div>
-                    <a href=""
+                    <a p-on="click:goToContact"
                        class="flex h-16 justify-center bg-transparent items-center uppercase font-bold cursor-pointer">Contactanos</a>
                 </div>
             </div>
@@ -322,8 +321,8 @@
             </div>
         </div>
         <div class="relative px-8 min-h-4em flex w-2/3 max-w-4xl justify-between items-end flex-col border-l border-r border-[#d9e6eb] pt-8">
-            <a href=""
-               class="w-full bg-[#1386eb] h-16 items-center font-bold flex z-50 flex-nowrap justify-center content-center px-4 uppercase">Contactanos</a>
+            <a p-on="click:goToContact"
+               class="w-full bg-[#1386eb] h-16 items-center font-bold flex z-50 flex-nowrap justify-center content-center px-4 uppercase cursor-pointer">Contactanos</a>
         </div>
     </section>
 </section>
@@ -368,8 +367,8 @@
             </div>
         </div>
         <div class="relative px-8 min-h-4em flex w-2/3 max-w-4xl justify-between items-end flex-col border-l border-r border-[#d9e6eb] pt-8 text-white">
-            <a href=""
-               class="w-full bg-[#1386eb] h-16 items-center font-bold flex z-50 flex-nowrap justify-center content-center px-4 uppercase">Contactanos</a>
+            <a p-on="click:goToContact"
+               class="w-full bg-[#1386eb] h-16 items-center font-bold flex z-50 flex-nowrap justify-center content-center px-4 uppercase cursor-pointer">Contactanos</a>
         </div>
         <div class="relative z-20 w-16 h-px my-16 bg-[#1386eb]"></div>
     </section>
@@ -396,7 +395,9 @@
                         <div class="w-4 h-4 border border-[#1386eb] rounded-full bg-[#1386eb]"></div>
                         <div class="w-4 h-4 border border-[#1386eb] rounded-full"></div>
                     </div>
-                    <div class="absolute left-0 top-0 right-0 bottom-0 z-0 flex justify-center items-center text-[#b4cfd6] text-[250px] font-extrabold pt-36 font-['Anton']">''</div>
+                    <div class="absolute left-0 top-0 right-0 bottom-0 z-0 flex justify-center items-center text-[#b4cfd6] text-[250px] font-extrabold pt-36 font-['Anton']">
+                        ''
+                    </div>
                 </div>
             </div>
             <div class="px-16">
@@ -416,7 +417,9 @@
                         <div class="w-4 h-4 border border-[#1386eb] rounded-full"></div>
                         <div class="w-4 h-4 border border-[#1386eb] rounded-full"></div>
                     </div>
-                    <div class="absolute left-0 top-0 right-0 bottom-0 z-0 flex justify-center items-center text-[#b4cfd6] text-[250px] font-extrabold pt-36 font-['Anton']">''</div>
+                    <div class="absolute left-0 top-0 right-0 bottom-0 z-0 flex justify-center items-center text-[#b4cfd6] text-[250px] font-extrabold pt-36 font-['Anton']">
+                        ''
+                    </div>
                 </div>
             </div>
         </div>
@@ -446,8 +449,8 @@
     </section>
 </section>
 
-<section
-        class="relative z-10 flex w-full bg-[#102429] flex-col items-center content-center animate__animated animate__fadeInUp">
+<section id="contact"
+         class="relative z-10 flex w-full bg-[#102429] flex-col items-center content-center animate__animated animate__fadeInUp">
     <div class="bg-img-footer relative z-10 flex container items-center justify-center py-32">
         <a href="#" class="relative z-30 w-32 h-32 flex items-center justify-center bg-[#1386eb]">
             <img src="./../img/svg/icon-play-light.svg" alt="Play video" class="h-8 w-8">
