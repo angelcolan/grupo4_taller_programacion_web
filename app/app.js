@@ -1,5 +1,6 @@
 import Pau from './pau/main.js';
 import './main.css'
+import axios from 'axios';
 
 import {scrollToId} from './utils.js';
 
@@ -221,16 +222,20 @@ Pau.controller('Todos', function (scope) {
     }
 
     scope.sendMessageContact = function (event) {
-        // Get the form element
-        const form = document.getElementById("myForm");
 
-        // Add 'submit' event handler
-        form.addEventListener("submit", (event) => {
-            event.preventDefault();
 
-            console.log(event);
-        });
     }
+
+    document.getElementById("myForm").addEventListener("submit", async function (e) {
+        e.preventDefault();
+        const contact = e.target;
+        var formData = new FormData(contact);
+        const formProps = Object.fromEntries(formData);
+        const url = `http://localhost:8080/contacts/sendInfo`;
+        const response = await axios.post(url, formProps);
+        console.log(response.data);
+    });
+
 
 })
 
