@@ -2,14 +2,13 @@ import config from './config.js';
 import directives from './directives';
 import filters from './filters.js';
 
-const KEY_RE = /^[^\|<]+/,
+var KEY_RE = /^[^\|<]+/,
     ARG_RE = /([^:]+):(.+)$/,
     FILTERS_RE = /\|[^\|<]+/g,
     FILTER_TOKEN_RE = /[^\s']+|'[^']+'/g,
     DEPS_RE = /<[^<\|]+/g,
     NESTING_RE = /^\^+/
 
-// parse a key, extract argument and nesting/root info
 function parseKey(rawKey) {
 
     const res = {},
@@ -55,6 +54,7 @@ function parseFilter(filter) {
             : null
     }
 }
+
 function Directive(directiveName, expression) {
 
     let prop, directive = directives[directiveName]

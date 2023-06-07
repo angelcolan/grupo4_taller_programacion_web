@@ -38,8 +38,6 @@ export default {
             selector = this.selector,
             delegator = this.delegator
         if (delegator) {
-
-            // for each blocks, delegate for better performance
             if (!delegator[selector]) {
                 delegator[selector] = function (e) {
                     const target = delegateCheck(e.target, delegator, selector)
@@ -53,7 +51,6 @@ export default {
                 }
                 delegator.addEventListener(event, delegator[selector])
             }
-
         } else {
 
             // a normal handler

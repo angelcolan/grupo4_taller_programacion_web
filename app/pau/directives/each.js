@@ -1,7 +1,7 @@
 import config from '../config.js';
 import Pau from '../pau.js';
 
-const augmentations = {
+const argumentations = {
     remove: function (scope) {
         this.splice(scope.$index, 1)
     },
@@ -81,13 +81,13 @@ function watchArray(collection, callback) {
             callback({
                 method: method,
                 args: Array.prototype.slice.call(arguments),
-                result: result
+                result
             })
         }
     })
 
-    for (let method in augmentations) {
-        collection[method] = augmentations[method]
+    for (let method in argumentations) {
+        collection[method] = argumentations[method]
     }
 }
 
@@ -128,8 +128,8 @@ export default {
                 each: true,
                 eachPrefixRE: new RegExp('^' + this.arg + '.'),
                 parentPau: this.pau,
-                index: index,
-                data: data
+                index,
+                data
             })
         this.collection[index] = spore.scope
         return spore

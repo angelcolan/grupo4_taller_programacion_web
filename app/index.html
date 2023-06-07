@@ -9,9 +9,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 </head>
-<body class="bg-[#d8e7ec]">
+<body class="bg-[#d8e7ec]" p-controller="Todos">
 
-<section class="container mx-auto" p-controller="Todos">
+<section class="container mx-auto">
     <header class="flex justify-between py-8 items-center border-b border-[#b4d0d6] animate__animated animate__fadeInDown">
         <div class="text-4xl text-center font-extrabold flex font-['Anton'] items-center">
             <div class="w-6 h-16 border-t border-l border-b border-[#102429]"></div>
@@ -179,8 +179,7 @@
                         Vivamus quis mi lorem.
                         Nunc condimentum, mi non dictum suscipit.
                     </div>
-                    <a href=""
-                       class="flex h-16 justify-center bg-transparent items-center uppercase font-bold">Reservar</a>
+                    <a p-on="click:goToPricing" class="flex h-16 justify-center bg-transparent items-center uppercase font-bold cursor-pointer">Reservar</a>
                 </div>
             </div>
             <div class="px-16">
@@ -195,7 +194,7 @@
                         Vivamus quis mi lorem.
                         Nunc condimentum, mi non dictum suscipit.
                     </div>
-                    <a href="" class="flex h-16 justify-center bg-transparent items-center uppercase font-bold">Contactanos</a>
+                    <a href="" class="flex h-16 justify-center bg-transparent items-center uppercase font-bold cursor-pointer">Contactanos</a>
                 </div>
             </div>
         </div>
@@ -341,26 +340,17 @@
         <div class="relative flex z-30 w-full flex-col items-center content-center max-w-screen-xl">
             <div class="grid grid-cols-4 w-full border-t border-[#d9e6eb]">
                 <!--bg-[#d8e7eb]-->
-                <div CLASS="flex justify-center text-[#222222] font-bold h-16 items-center tracking-wide border-r border-[#d9e6eb]">
-                    <p>CARS</p>
-                </div>
-                <div CLASS="flex justify-center text-[#222222] font-bold h-16 items-center tracking-wide border-r border-[#d9e6eb]">
-                    <p>SUVS</p>
-                </div>
-                <div CLASS="flex justify-center text-[#222222] font-bold h-16 items-center tracking-wide border-r border-[#d9e6eb]">
-                    <p>TRUCKS</p>
-                </div>
-                <div CLASS="flex justify-center text-[#222222] font-bold h-16 items-center tracking-wide">
-                    <p>BIKES</p>
+                <div CLASS="flex justify-center text-[#222222] font-bold h-16 items-center tracking-wide border-r border-[#d9e6eb]"
+                     p-each="price:prices" p-class="bg-[#d8e7eb]:price.selected" p-on="click:selectPrice">
+                    <p p-text="price.description"></p>
                 </div>
             </div>
             <div class="grid grid-cols-4">
-                <div class="border-t border-b border-r border-[#d9e6eb]">
+                <div class="border-t border-b border-r border-[#d9e6eb]" p-each="pricePlain:plainsPriceSelected">
                     <div class="px-9">
                         <div class="flex pt-8 pb-4 flex-col items-center">
-                            <div class="text-[#1386eb] font-['Anton'] tracking-[2.3px] mb-2 uppercase">Basico</div>
-                            <h5 class="text-[#102429] text-2xl font-extrabold font-['Anton'] tracking-wide">S/
-                                250.00</h5>
+                            <div class="text-[#1386eb] font-['Anton'] tracking-[2.3px] mb-2 uppercase" p-text="pricePlain.name"></div>
+                            <h5 class="text-[#102429] text-2xl font-extrabold font-['Anton'] tracking-wide" p-text="pricePlain.price"></h5>
                         </div>
                         <div class="flex flex-col justify-center flex-1 text-center">
                             <div class="flex-1 text-[#2e4a52] py-5 border-t border-b border-[#d9e6eb]">
@@ -375,91 +365,7 @@
                             <a href=""
                                class="flex h-16 justify-center bg-transparent items-center uppercase font-bold border-b border-[#d9e6eb]">Agregar
                                 al carrito</a>
-                            <div class="flex-1 text-[#2e4a52] py-5 border-b border-[#d9e6eb] text-sm">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                incididunt.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="border-t border-b border-r border-[#d9e6eb]">
-                    <div class="px-9">
-                        <div class="flex pt-8 pb-4 flex-col items-center">
-                            <div class="text-[#1386eb] font-['Anton'] tracking-[2.3px] mb-2 uppercase">Standar</div>
-                            <h5 class="text-[#102429] text-2xl font-extrabold font-['Anton'] tracking-wide">S/
-                                250.00</h5>
-                        </div>
-                        <div class="flex flex-col justify-center flex-1 text-center">
-                            <div class="flex-1 text-[#2e4a52] py-5 border-t border-b border-[#d9e6eb]">
-                                Pellentesque iaculis lorem
-                            </div>
-                            <div class="flex-1 text-[#2e4a52] py-5 border-b border-[#d9e6eb]">
-                                Nulla dictum lectus sed
-                            </div>
-                            <div class="flex-1 text-[#2e4a52] py-5 border-b border-[#d9e6eb]">
-                                Nullam non massa magna
-                            </div>
-                            <a href=""
-                               class="flex h-16 justify-center bg-transparent items-center uppercase font-bold border-b border-[#d9e6eb]">Agregar
-                                al carrito</a>
-                            <div class="flex-1 text-[#2e4a52] py-5 border-b border-[#d9e6eb] text-sm">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                incididunt.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="border-t border-b border-r border-[#d9e6eb]">
-                    <div class="px-9">
-                        <div class="flex pt-8 pb-4 flex-col items-center">
-                            <div class="text-[#1386eb] font-['Anton'] tracking-[2.3px] mb-2 uppercase">Premiun</div>
-                            <h5 class="text-[#102429] text-2xl font-extrabold font-['Anton'] tracking-wide">S/
-                                250.00</h5>
-                        </div>
-                        <div class="flex flex-col justify-center flex-1 text-center">
-                            <div class="flex-1 text-[#2e4a52] py-5 border-t border-b border-[#d9e6eb]">
-                                Pellentesque iaculis lorem
-                            </div>
-                            <div class="flex-1 text-[#2e4a52] py-5 border-b border-[#d9e6eb]">
-                                Nulla dictum lectus sed
-                            </div>
-                            <div class="flex-1 text-[#2e4a52] py-5 border-b border-[#d9e6eb]">
-                                Nullam non massa magna
-                            </div>
-                            <a href=""
-                               class="flex h-16 justify-center bg-transparent items-center uppercase font-bold border-b border-[#d9e6eb]">Agregar
-                                al carrito</a>
-                            <div class="flex-1 text-[#2e4a52] py-5 border-b border-[#d9e6eb] text-sm">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                incididunt.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="border-t border-b border-[#d9e6eb]">
-                    <div class="px-9">
-                        <div class="flex pt-8 pb-4 flex-col items-center">
-                            <div class="text-[#1386eb] font-['Anton'] tracking-[2.3px] mb-2 uppercase">Ultimate</div>
-                            <h5 class="text-[#102429] text-2xl font-extrabold font-['Anton'] tracking-wide">S/
-                                250.00</h5>
-                        </div>
-                        <div class="flex flex-col justify-center flex-1 text-center">
-                            <div class="flex-1 text-[#2e4a52] py-5 border-t border-b border-[#d9e6eb]">
-                                Pellentesque iaculis lorem
-                            </div>
-                            <div class="flex-1 text-[#2e4a52] py-5 border-b border-[#d9e6eb]">
-                                Nulla dictum lectus sed
-                            </div>
-                            <div class="flex-1 text-[#2e4a52] py-5 border-b border-[#d9e6eb]">
-                                Nullam non massa magna
-                            </div>
-                            <a href=""
-                               class="flex h-16 justify-center bg-transparent items-center uppercase font-bold border-b border-[#d9e6eb]">Agregar
-                                al carrito</a>
-                            <div class="flex-1 text-[#2e4a52] py-5 border-b border-[#d9e6eb] text-sm">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                incididunt.
-                            </div>
+                            <div class="flex-1 text-[#2e4a52] py-5 border-b border-[#d9e6eb] text-sm" p-text="pricePlain.description"></div>
                         </div>
                     </div>
                 </div>

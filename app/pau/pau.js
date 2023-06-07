@@ -16,13 +16,11 @@ function Pau(el, options) {
     el.pau = this
     this._bindings = {}
 
-    // copy options
     options = options || {}
     for (let op in options) {
         this[op] = options[op]
     }
 
-    // initialize the scope object
     const dataPrefix = config.prefix + '-data'
     let scope = this.scope =
         (options && options.data)
@@ -77,9 +75,8 @@ Pau.prototype._compileNode = function (node, root) {
             if (id) {
                 self['$' + id] = pau
             }
-        } else { // normal node (non-controller)
+        } else {
 
-            // parse if has attributes
             if (node.attributes && node.attributes.length) {
                 slice.call(node.attributes).forEach(function (attr) {
                     if (attr.name === ctrlAttr) return
@@ -95,17 +92,8 @@ Pau.prototype._compileNode = function (node, root) {
                 })
             }
 
-            // recursively compile childNodes
             if (node.childNodes.length) {
                 slice.call(node.childNodes).forEach(function (child) {
-                    self._compileNode(child)
-                })
-            }
-        }
-
-        if (!eachExp && !ctrlExp) {
-            if (node.childNodes.length) {
-                slice.call(node.childNodes).forEach(function (child, i) {
                     self._compileNode(child)
                 })
             }
@@ -141,19 +129,15 @@ Pau.prototype._bind = function (node, directive) {
             ownerScope._bindings[key] ||
             ownerScope._createBinding(key)
 
-    // add directive to this binding
     binding.instances.push(directive)
     directive.binding = binding
 
-    // invoke bind hook if exists
     if (directive.bind) {
         directive.bind(binding.value)
     }
 
-    // set initial value
     directive.update(binding.value)
 
-    // computed properties
     if (directive.deps) {
         directive.deps.forEach(function (dep) {
             const depScope = determinScope(dep, scope),
@@ -217,16 +201,11 @@ Pau.prototype._unbind = function () {
 }
 
 Pau.prototype._destroy = function () {
-    for (let key in this._bindings) {
-        this._bindings[key].instances.forEach(unbind)
-        delete this._bindings[key]
-    }
-    this.el.parentNode.remove(this.el)
-
-    function unbind(instance) {
-        if (instance.unbind) {
-            instance.unbind()
-        }
+    this._unbind()
+    delete this.el.pau
+    this.el.parentNode.removeChild(this.el)
+    if (this.parentPau && this.id) {
+        delete this.parentPau['$' + this.id]
     }
 }
 
