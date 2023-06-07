@@ -27,6 +27,13 @@
     background-repeat: no-repeat;
 }
 
+.bg-img-footer  {
+    background-image: url(./../img/img-newsletter.webp);
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 .min-h-4em {
     min-height: 4em;
 }
