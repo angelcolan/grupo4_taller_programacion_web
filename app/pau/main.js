@@ -37,9 +37,10 @@ api.bootstrap = function (opts) {
     if (opts) {
         config.prefix = opts.prefix || config.prefix
     }
-    const app = {};
+    const app = {},
+        selector = '[' + config.prefix + '-controller]';
     let n = 0, el, pau;
-    while (el = document.querySelector('[' + config.prefix + '-controller]')) {
+    while (el = document.querySelector(selector)) {
         pau = new Pau(el)
         if (el.id) {
             app['$' + el.id] = pau

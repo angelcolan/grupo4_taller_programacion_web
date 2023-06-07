@@ -58,7 +58,7 @@ Pau.prototype._compileNode = function (node, root) {
     const self = this;
     if (node.nodeType === Node.TEXT_NODE) {
         self._compileTextNode(node)
-    } else if (node.nodeType !== Node.COMMENT_NODE) {
+    } else if (node.nodeType === Node.ELEMENT_NODE) {
         const eachExp = node.getAttribute(eachAttr),
             ctrlExp = node.getAttribute(ctrlAttr)
         if (eachExp) {
@@ -174,7 +174,7 @@ Pau.prototype._createBinding = function (key) {
             return binding.value
         },
         set: function (value) {
-            if (value === binding) return
+            if (value === binding.value) return
             binding.changed = true
             binding.value = value
             binding.instances.forEach(function (instance) {
