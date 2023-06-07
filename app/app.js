@@ -220,6 +220,18 @@ Pau.controller('Todos', function (scope) {
         scope.plainsPriceSelected = scope.prices[event.scope.$index].plains;
     }
 
+    scope.sendMessageContact = function (event) {
+        // Get the form element
+        const form = document.getElementById("myForm");
+
+        // Add 'submit' event handler
+        form.addEventListener("submit", (event) => {
+            event.preventDefault();
+
+            console.log(event);
+        });
+    }
+
 })
 
 Pau.bootstrap()
