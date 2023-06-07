@@ -1,6 +1,7 @@
 import Pau from './pau/main.js';
 import './main.css'
 import axios from 'axios';
+import swal from 'sweetalert';
 
 import {scrollToId} from './utils.js';
 
@@ -226,14 +227,20 @@ Pau.controller('Todos', function (scope) {
 
     }
 
-    document.getElementById("myForm").addEventListener("submit", async function (e) {
+    const myForm = document.getElementById("myForm")
+    myForm.addEventListener("submit", async function (e) {
         e.preventDefault();
         const contact = e.target;
         var formData = new FormData(contact);
         const formProps = Object.fromEntries(formData);
         const url = `http://localhost:8080/contacts/sendInfo`;
         const response = await axios.post(url, formProps);
-        console.log(response.data);
+        if (response.data.data.code == 200) {
+            swal("Muy bien!", "Te enviamos un mensaje para poder orientarte!", "success");
+            myForm.reset();
+        } else {
+            swal("Uups!", "Ocurrio un error al registrar tus datos, intenta nuevamente en un momento!", "error");
+        }
     });
 
 
