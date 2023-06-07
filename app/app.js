@@ -222,11 +222,6 @@ Pau.controller('Todos', function (scope) {
         scope.plainsPriceSelected = scope.prices[event.scope.$index].plains;
     }
 
-    scope.sendMessageContact = function (event) {
-
-
-    }
-
     const myForm = document.getElementById("myForm")
     myForm.addEventListener("submit", async function (e) {
         e.preventDefault();
