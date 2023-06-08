@@ -7,7 +7,7 @@ import {scrollToId} from './utils.js';
 import CountCar from "./components/count.car";
 import appStore from './shared/data-access/app-store/index';
 
-Pau.controller('Todos', function (scope) {
+Pau.controller('Home', function (scope) {
     scope.prices = [
         {
             id: 1,
