@@ -28,7 +28,7 @@
                     Reservar
                 </div>
                 <div class="bg-[#102429] px-6 py-5 relative">
-                    <div id="qtty-items-car" class="absolute left-auto h-8 w-8 bg-[#ff292c] text-white rounded-full flex justify-center items-center -top-3 -right-3 bottom-auto font-semibold">0</div>
+                    <div id="qtty-items-car" aria-live="polite" class="absolute left-auto h-8 w-8 bg-[#ff292c] text-white rounded-full flex justify-center items-center -top-3 -right-3 bottom-auto font-semibold"></div>
                     <img src="./../img/svg/icon-bag-light.svg" alt="Carrito de compras" class="h-5">
                 </div>
             </div>
@@ -355,9 +355,9 @@
                             <h5 class="text-[#102429] text-2xl font-extrabold font-['Anton'] tracking-wide"
                                 p-text="pricePlain.price"></h5>
                         </div>
-                        <div class="flex flex-col justify-center flex-1 text-center">
-                            <a href=""
-                               class="flex h-16 justify-center bg-transparent items-center uppercase font-bold border-b border-[#d9e6eb]">Agregar
+                        <div class="flex flex-col justify-center flex-1 text-center border-t border-[#d9e6eb]">
+                            <a p-on="click:addServiceToCar"
+                               class="flex h-16 justify-center bg-transparent items-center uppercase font-bold border-b border-[#d9e6eb] cursor-pointer">Agregar
                                 al carrito</a>
                             <div class="flex-1 text-[#2e4a52] py-5 border-b border-[#d9e6eb] text-sm"
                                  p-text="pricePlain.description"></div>

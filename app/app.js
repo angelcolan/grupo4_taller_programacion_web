@@ -4,6 +4,8 @@ import axios from 'axios';
 import swal from 'sweetalert';
 
 import {scrollToId} from './utils.js';
+import CountCar from "./components/count.car";
+import appStore from './shared/data-access/app-store/index';
 
 Pau.controller('Todos', function (scope) {
     scope.prices = [
@@ -222,6 +224,14 @@ Pau.controller('Todos', function (scope) {
         scope.plainsPriceSelected = scope.prices[event.scope.$index].plains;
     }
 
+    scope.addServiceToCar = function (event) {
+        const service = scope.prices[event.scope.$index];
+        appStore.dispatch('addServiceToCar', {
+            id: service.id,
+            description: service.description
+        })
+    }
+
     const myForm = document.getElementById("myForm")
     myForm.addEventListener("submit", async function (e) {
         e.preventDefault();
@@ -229,12 +239,12 @@ Pau.controller('Todos', function (scope) {
         var formData = new FormData(contact);
         const formProps = Object.fromEntries(formData);
 
-        if(!formProps.fullname.length) {
+        if (!formProps.fullname.length) {
             swal("Uups!", "Necesitamos tus nombres para contactarte!", "error");
             return false;
         }
 
-        if(!formProps.phone.length) {
+        if (!formProps.phone.length) {
             swal("Uups!", "Necesitamos tu número de celular para ofrecerte promociones!", "error");
             return false;
         }
@@ -256,6 +266,8 @@ Pau.controller('Todos', function (scope) {
         submitForm.innerText = 'Suscríbete';
     });
 
+    const countCar = new CountCar();
+    countCar.render();
 
 })
 
