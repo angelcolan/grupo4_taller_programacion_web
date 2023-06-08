@@ -93,7 +93,7 @@ export default class Store {
      * if that mutation exists by calling it
      *
      * @param {string} mutationKey
-     * @param {mixed} payload
+     * @param {any} payload
      * @returns {boolean}
      * @memberof Store
      */
