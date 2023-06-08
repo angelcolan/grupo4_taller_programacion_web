@@ -10,6 +10,11 @@ export default class CountCar extends Component {
     }
 
     render() {
+        this.element.style.display = 'flex';
+
+        if (!store.state.car?.length) {
+            this.element.style.display = 'none';
+        }
         this.element.innerHTML = `${store.state.car?.length}`;
     }
 }
