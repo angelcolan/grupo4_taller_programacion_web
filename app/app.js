@@ -197,7 +197,6 @@ Pau.controller('Todos', function (scope) {
         }
     ];
     scope.plainsPriceSelected = scope.prices[0].plains;
-    scope.sendContactLoading = false;
 
     scope.goToAbout = function () {
         scrollToId('about');
@@ -240,9 +239,12 @@ Pau.controller('Todos', function (scope) {
             return false;
         }
 
+        const submitForm = document.getElementById("submitForm")
+        submitForm.disabled = true;
+        submitForm.innerText = 'Enviando....';
+
         const url = `http://localhost:8080/contacts/sendInfo`;
         const response = await axios.post(url, formProps);
-        scope.sendContactLoading = true;
 
         if (response.data.data.code == 200) {
             swal("Muy bien!", "Te enviamos un mensaje para poder orientarte!", "success");
@@ -250,7 +252,8 @@ Pau.controller('Todos', function (scope) {
         } else {
             swal("Uups!", "Ocurrio un error al registrar tus datos, intenta nuevamente en un momento!", "error");
         }
-        scope.sendContactLoading = false;
+        submitForm.disabled = false;
+        submitForm.innerText = 'Suscríbete';
     });
 
 

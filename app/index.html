@@ -340,7 +340,6 @@
         </div>
         <div class="relative flex z-30 w-full flex-col items-center content-center max-w-screen-xl">
             <div class="grid grid-cols-4 w-full border-t border-[#d9e6eb]">
-                <!--bg-[#d8e7eb]-->
                 <div CLASS="flex justify-center text-[#222222] font-bold h-16 items-center tracking-wide border-r border-[#d9e6eb] cursor-pointer"
                      p-each="price:prices" p-class="bg-[#d8e7eb]:price.selected" p-on="click:selectPrice">
                     <p p-text="price.description"></p>
@@ -455,7 +454,7 @@
         <form id="myForm" class="flex flex-col w-2/6">
             <input type="text" placeholder="Ingresa tus nombres y apellidos" name="fullname" class="py-4 px-4" autocomplete="off">
             <input type="text" placeholder="Ingresa tu celular" name="phone" class="py-4 px-4" autocomplete="off" maxlength="9" >
-            <button type="submit" class="bg-[#1486eb] uppercase text-white font-bold py-6 cursor-pointer hover:bg-[#299bff]">Suscríbete</button>
+            <button id="submitForm" type="submit" class="bg-[#1486eb] uppercase text-white font-bold py-6 cursor-pointer hover:bg-[#299bff]">Suscríbete</button>
         </form>
     </div>
     <div class="absolute z-0 left-0 right-0 top-0 bottom-auto bg-[#d8e7eb] h-32"></div>
