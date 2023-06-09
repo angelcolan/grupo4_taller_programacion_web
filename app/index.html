@@ -10,24 +10,26 @@
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 </head>
 <body class="bg-[#d8e7ec] relative" p-controller="Home">
-<header class="flex justify-between py-8 items-center border-b border-[#b4d0d6] animate__animated animate__fadeInDown fixed top-0 left-0 right-0 px-48 bg-[#d8e7ec] z-50">
-    <div class="text-4xl text-center font-extrabold flex font-['Anton'] items-center">
-        <div class="w-6 h-16 border-t border-l border-b border-[#102429]"></div>
-        <div class="uppercase tracking-wides px-1 text-[#333333]">Mapisa</div>
-        <div class="w-6 h-16 border-t border-r border-b border-[#102429]"></div>
-    </div>
-    <div class="flex justify-between space-x-8 font-extrabold uppercase items-center">
-        <p class="cursor-pointer" p-on="click:goToAbout">Nosotros</p>
-        <p class="cursor-pointer" p-on="click:goToServices">Servicios</p>
-        <p class="cursor-pointer" p-on="click:goToPricing">Precios</p>
-        <p class="cursor-pointer" p-on="click:goToContact">Contacto</p>
-        <div class="flex cursor-pointer">
-            <div class="bg-[#1486eb] px-10 py-5 text-white">
-                Reservar
-            </div>
-            <div class="bg-[#102429] px-6 py-5 relative">
-                <div id="qtty-items-car" aria-live="polite" class="absolute left-auto h-8 w-8 bg-[#ff292c] text-white rounded-full flex justify-center items-center -top-3 -right-3 bottom-auto font-semibold"></div>
-                <img src="./../img/svg/icon-bag-light.svg" alt="Carrito de compras" class="h-5">
+<header class="items-center animate__animated animate__fadeInDown fixed top-0 left-0 right-0 bg-[#d8e7ec] z-50">
+    <div class="container mx-auto flex justify-between border-b border-[#b4d0d6] py-8">
+        <div class="text-4xl text-center font-extrabold flex font-['Anton'] items-center">
+            <div class="w-6 h-16 border-t border-l border-b border-[#102429]"></div>
+            <div class="uppercase tracking-wides px-1 text-[#333333]">Mapisa</div>
+            <div class="w-6 h-16 border-t border-r border-b border-[#102429]"></div>
+        </div>
+        <div class="flex justify-between space-x-8 font-extrabold uppercase items-center">
+            <p class="cursor-pointer" p-on="click:goToAbout">Nosotros</p>
+            <p class="cursor-pointer" p-on="click:goToServices">Servicios</p>
+            <p class="cursor-pointer" p-on="click:goToPricing">Precios</p>
+            <p class="cursor-pointer" p-on="click:goToContact">Contacto</p>
+            <div class="flex cursor-pointer">
+                <div class="bg-[#1486eb] px-10 py-5 text-white">
+                    Reservar
+                </div>
+                <div class="bg-[#102429] px-6 py-5 relative">
+                    <div id="qtty-items-car" aria-live="polite" class="absolute left-auto h-8 w-8 bg-[#ff292c] text-white rounded-full flex justify-center items-center -top-3 -right-3 bottom-auto font-semibold"></div>
+                    <img src="./../img/svg/icon-bag-light.svg" alt="Carrito de compras" class="h-5">
+                </div>
             </div>
         </div>
     </div>
