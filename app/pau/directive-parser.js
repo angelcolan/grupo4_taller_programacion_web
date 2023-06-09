@@ -7,6 +7,7 @@ var KEY_RE = /^[^\|<]+/,
     FILTERS_RE = /\|[^\|<]+/g,
     FILTER_TOKEN_RE = /[^\s']+|'[^']+'/g,
     DEPS_RE = /<[^<\|]+/g,
+    INVERSE_RE = /^!/,
     NESTING_RE = /^\^+/
 
 function parseKey(rawKey) {
@@ -21,6 +22,11 @@ function parseKey(rawKey) {
     res.arg = argMatch
         ? argMatch[1].trim()
         : null
+
+    res.inverse = INVERSE_RE.test(res.key)
+    if (res.inverse) {
+        res.key = res.key.slice(1)
+    }
 
     const nesting = res.key.match(NESTING_RE)
     res.nesting = nesting
@@ -84,23 +90,18 @@ function Directive(directiveName, expression) {
     this.filters = filterExps
         ? filterExps.map(parseFilter)
         : null
-
-    const depExp = expression.match(DEPS_RE)
-    this.deps = depExp
-        ? depExp[0].slice(1).trim().split(/\s+/).map(parseKey)
-        : null
 }
 
 Directive.prototype.refresh = function () {
-    if (this.value) {
-        const value = this.value.call(this.pau.scope)
+    const getter = this.value
+    if (getter && typeof getter === 'function') {
+        let value = getter.call(this.pau.scope)
+        if (this.inverse) value = !value
         this._update(
             this.filters ? this.applyFilters(value) : value
         )
     }
-    if (this.binding.refreshDependents) {
-        this.binding.refreshDependents()
-    }
+    this.binding.emitChange()
 }
 
 Directive.prototype.update = function (value) {
@@ -110,10 +111,13 @@ Directive.prototype.update = function (value) {
     if (typeof value === 'function' && !this.fn) {
         value = value()
     }
+    if (this.inverse) value = !value
     this._update(
         this.filters ? this.applyFilters(value) : value
     )
-    if (this.deps) this.refresh()
+    if (this.binding.isComputed) {
+        this.refresh()
+    }
 }
 
 Directive.prototype.applyFilters = function (value) {
