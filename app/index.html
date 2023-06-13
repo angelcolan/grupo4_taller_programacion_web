@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 </head>
-<body class="text-[14px]" p-controller="Home">
+<body class="text-[14px] lg:text-[17px]" p-controller="Home">
 
 <header class="items-center animate__animated animate__fadeInDown fixed top-0 left-0 right-0 bg-[#d8e7ec] z-50">
     <div class="container mx-auto flex justify-between border-b border-[#b4d0d6] p-[1em] lg:p-[2em]">
@@ -25,17 +25,21 @@
             <div class="uppercase tracking-wides px-1 text-[#333333]">Mapisa</div>
             <div class="w-5 h-14 border-t border-r border-b border-[#102429]"></div>
         </div>
-        <div class="flex justify-between space-x-8 font-extrabold uppercase items-center">
-            <div class="flex cursor-pointer">
-                <div class="bg-[#102429] px-5 py-5 relative">
-                    <div id="qtty-items-car" aria-live="polite"
-                         class="absolute left-auto h-7 w-7 bg-[#ff292c] text-white rounded-full text-xs flex justify-center items-center -top-3 -right-3 bottom-auto font-semibold">
-                        0
-                    </div>
-                    <img src="./../img/svg/icon-bag-light.svg" alt="Carrito de compras" class="h-4 font-bold">
-                </div>
+        <nav class="hidden lg:flex justify-end items-center flex-1 bg-transparent relative float-right">
+            <div class="grid grid-flow-col auto-cols-auto gap-x-[1.5em]">
+                <a href="" class="flex relative p-[20px] mx-[0px] text-left align-top justify-center items-center text-[#102429] text-[0.8em] leading-[2.5] font-bold tracking-[0.25ch] indent-[0.25ch] uppercase">Nosotros</a>
+                <a href="" class="flex relative p-[20px] mx-[0px] text-left align-top justify-center items-center text-[#102429] text-[0.8em] leading-[2.5] font-bold tracking-[0.25ch] indent-[0.25ch] uppercase">Servicios</a>
+                <a href="" class="flex relative p-[20px] mx-[0px] text-left align-top justify-center items-center text-[#102429] text-[0.8em] leading-[2.5] font-bold tracking-[0.25ch] indent-[0.25ch] uppercase">Precios</a>
+                <a href="" class="flex relative p-[20px] mx-[0px] text-left align-top justify-center items-center text-[#102429] text-[0.8em] leading-[2.5] font-bold tracking-[0.25ch] indent-[0.25ch] uppercase">Contacto</a>
+                <a href="" class="relative z-50 flex h-[5em] min-w-[10em] mb-[0px] px-[1.875em] justify-center items-center bg-[#1386eb] text-white text-[0.8em] font-bold text-center uppercase">Reservar</a>
             </div>
-        </div>
+        </nav>
+        <a class="flex relavite w-[5em] h-[5em] p-0 justify-center bg-[#102429] text-[0.8em] text-white items-center">
+            <div class="absolute left-auto h-[2.5em] w-[2.5em] min-w-[2.5em] m-[0em] bg-[#ff292c] text-white rounded-full text-[1em] flex justify-center items-center -top-[1em] -right-[1em] bottom-auto font-semibold p-0">
+                0
+            </div>
+            <img src="./../img/svg/icon-bag-light.svg" alt="Carrito de compras" class="w-[1.25em] h-[1.25em] object-contain w-full">
+        </a>
     </div>
 </header>
 
