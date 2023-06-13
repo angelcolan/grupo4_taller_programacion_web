@@ -305,18 +305,8 @@
     </div>
     <div>
         <div class="grid content-start auto-cols-fr gap-x-[1px] gap-y-[1px] grid-cols-2	border-t border-[#d8e7eb] bg-[#d8e7eb] relative">
-            <!--bg-[#ddd]-->
-            <a class="flex h-[5em] px-[1.875em] justify-center items-center bg-white text-[0.8em] font-bold text-center tracking-[0.25ch] uppercase relative align-top no-underline	cursor-pointer text-[#222] max-w-[100%]">
-                <div>Autos</div>
-            </a>
-            <a class="flex h-[5em] px-[1.875em] justify-center items-center bg-white text-[0.8em] font-bold text-center tracking-[0.25ch] uppercase relative align-top no-underline	cursor-pointer text-[#222] max-w-[100%]">
-                <div>Suvs</div>
-            </a>
-            <a class="flex h-[5em] px-[1.875em] justify-center items-center bg-white text-[0.8em] font-bold text-center tracking-[0.25ch] uppercase relative align-top no-underline	cursor-pointer text-[#222] max-w-[100%]">
-                <div>Trucks</div>
-            </a>
-            <a class="flex h-[5em] px-[1.875em] justify-center items-center bg-white text-[0.8em] font-bold text-center tracking-[0.25ch] uppercase relative align-top no-underline	cursor-pointer text-[#222] max-w-[100%]">
-                <div>Bicicletas</div>
+            <a p-each="price:prices" p-class="bg-[#ddd]:price.selected" p-on="click:selectPrice" class="flex h-[5em] px-[1.875em] justify-center items-center bg-white text-[0.8em] font-bold text-center tracking-[0.25ch] uppercase relative align-top no-underline cursor-pointer text-[#222] max-w-[100%]">
+                <div p-text="price.description"></div>
             </a>
         </div>
         <div class="relative">
