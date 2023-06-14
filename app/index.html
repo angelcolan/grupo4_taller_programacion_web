@@ -47,8 +47,8 @@
 
 <section id="hero-section"
          class="px-[2em] pt-[6em] relative z-0 flex w-full flex-col justify-start items-center bg-[#d8e7ec] lg:px-8em lg:pt-[8em]">
-    <section id="hero-wrapper"
-             class="py-[4em] relative flex w-full max-w-[82em] flex-col justify-center items-center text-center">
+    <div id="hero-wrapper"
+             class="py-[4em] relative flex w-full max-w-[82em] flex-col justify-center items-center text-center lg:py-[0em]">
         <div class="hidden lg:flex relative z-50 w-full min-h-[4em] -mt-[1px] -mb-[1px] justify-between flex-wrap items-center text-[1em]">
             <div class="flex justify-center flex-wrap items-center gap-x-[1px] gap-y-[1px] border-t border-b border-[#b4cfd6] bg-[#b4cfd6]">
                 <a class="flex w-[5em] h-[5em] justify-center items-center flex-1 bg-[#d8e7eb] text-[0.8em]">
@@ -103,11 +103,12 @@
         <img src="./../img/car-image-hero.webp" alt="Car"
              class="absolute z-50 top-auto bottom-0 left-auto right-0 w-10/12 lg:w-8/12 animate__animated animate__zoomIn animate__fast">
         <div id="hero-bg-stripes"
-             class="py-[2em] w-2/4 gap-x-[2em] gap-y-[2em] absolute top-0 bottom-0 z-20 flex justify-between flex-row items-center text-[1em] bg-[#1486eb] animate__animated animate__zoomIn">
-            <div class="-ml-[2em] w-full bg-[#0f2429] flex-1 h-full animate__animated animate__slideInRight grow"></div>
-            <div class="-mr-[2em] w-full bg-[#0f2429] flex-1 h-full animate__animated animate__slideInLeft grow"></div>
+             class="py-[2em] w-2/4 gap-x-[2em] gap-y-[2em] absolute top-0 bottom-0 z-20 flex justify-between flex-row items-center text-[1em] bg-[#1486eb]
+              lg:w-4/12 lg:pty[4em] lg:gap-x-[4em] lg:gap-y-[4em] animate__animated animate__zoomIn">
+            <div class="-ml-[2em] w-full bg-[#0f2429] flex-1 h-full lg:-ml-[4em] animate__animated animate__slideInRight grow"></div>
+            <div class="-mr-[2em] w-full bg-[#0f2429] flex-1 h-full lg:-mr-[4em] animate__animated animate__slideInLeft grow"></div>
         </div>
-    </section>
+    </div>
 </section>
 
 <section id="features" class="px-[2em] relative z-20 flex w-full justify-center items-center bg-[#d8e7eb]">
