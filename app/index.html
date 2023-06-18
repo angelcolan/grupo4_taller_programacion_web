@@ -22,16 +22,16 @@
         </div>
         <div class="text-3xl text-center font-extrabold flex font-['Anton'] items-center">
             <div class="w-5 h-14 border-t border-l border-b border-[#102429]"></div>
-            <div class="uppercase tracking-wides px-1 text-[#333333]">Mapisa</div>
+            <div class="uppercase tracking-wides px-1 text-[#333333] cursor-pointer">Mapisa</div>
             <div class="w-5 h-14 border-t border-r border-b border-[#102429]"></div>
         </div>
         <nav class="hidden lg:flex justify-end items-center flex-1 bg-transparent relative float-right">
             <div class="grid grid-flow-col auto-cols-auto gap-x-[1.5em]">
-                <a href="" class="flex relative p-[20px] mx-[0px] text-left align-top justify-center items-center text-[#102429] text-[0.8em] leading-[2.5] font-extrabold tracking-[0.25ch] indent-[0.25ch] uppercase lg:p-[0px]">Nosotros</a>
-                <a href="" class="flex relative p-[20px] mx-[0px] text-left align-top justify-center items-center text-[#102429] text-[0.8em] leading-[2.5] font-extrabold tracking-[0.25ch] indent-[0.25ch] uppercase lg:p-[0px]">Servicios</a>
-                <a href="" class="flex relative p-[20px] mx-[0px] text-left align-top justify-center items-center text-[#102429] text-[0.8em] leading-[2.5] font-extrabold tracking-[0.25ch] indent-[0.25ch] uppercase lg:p-[0px]">Precios</a>
-                <a href="" class="flex relative p-[20px] mx-[0px] text-left align-top justify-center items-center text-[#102429] text-[0.8em] leading-[2.5] font-extrabold tracking-[0.25ch] indent-[0.25ch] uppercase lg:p-[0px]">Contacto</a>
-                <a href="" class="relative z-50 flex h-[5em] min-w-[10em] mb-[0px] px-[1.875em] justify-center items-center bg-[#1386eb] text-white text-[0.8em] font-extrabold text-center uppercase">Reservar</a>
+                <a p-on="click:goToAbout" class="flex relative p-[20px] mx-[0px] text-left align-top justify-center items-center text-[#102429] text-[0.8em] leading-[2.5] font-extrabold tracking-[0.25ch] indent-[0.25ch] uppercase lg:p-[0px] cursor-pointer">Nosotros</a>
+                <a p-on="click:goToServices" class="flex relative p-[20px] mx-[0px] text-left align-top justify-center items-center text-[#102429] text-[0.8em] leading-[2.5] font-extrabold tracking-[0.25ch] indent-[0.25ch] uppercase lg:p-[0px] cursor-pointer">Servicios</a>
+                <a p-on="click:goToPricing" class="flex relative p-[20px] mx-[0px] text-left align-top justify-center items-center text-[#102429] text-[0.8em] leading-[2.5] font-extrabold tracking-[0.25ch] indent-[0.25ch] uppercase lg:p-[0px] cursor-pointer">Precios</a>
+                <a p-on="click:goToContact" class="flex relative p-[20px] mx-[0px] text-left align-top justify-center items-center text-[#102429] text-[0.8em] leading-[2.5] font-extrabold tracking-[0.25ch] indent-[0.25ch] uppercase lg:p-[0px] cursor-pointer">Contacto</a>
+                <a p-on="click:goToPricing" class="relative z-50 flex h-[5em] min-w-[10em] mb-[0px] px-[1.875em] justify-center items-center bg-[#1386eb] text-white text-[0.8em] font-extrabold text-center uppercase cursor-pointer">Reservar</a>
             </div>
         </nav>
         <div class="relative grow-0 shrink-0 basis-auto inline-block">
@@ -233,7 +233,7 @@
                     Morbi dui odio, efficitur id enim et, cursus ultricies tortor. Vivamus quis mi lorem. Nunc
                     condimentum, mi non dictum suscipit.
                 </div>
-                <a class="flex h-[5em] px-[1.875em] justify-center items-center border-t border-[#1d373d] bg-transparent text-[0.8em] font-bold tracking-[0.25ch] uppercase">Reservar</a>
+                <a p-on="click:goToPricing" class="flex h-[5em] px-[1.875em] justify-center items-center border-t border-[#1d373d] bg-transparent text-[0.8em] font-bold tracking-[0.25ch] uppercase cursor-pointer">Reservar</a>
             </div>
         </div>
         <div class="px-[2em] flex flex-col justify-start items-stretch bg-[#102429] text-white text-center">
@@ -245,7 +245,7 @@
                     Quisque fermentum erat enim. Cras nec nisi at ipsum elementum tincidunt et nec nisi. Vivamus pharetra orci non elit egestas, vitae iaculis risus eleifend.
                     Morbi dui odio, efficitur id enim et, cursus ultricies tortor. Vivamus quis mi lorem. Nunc condimentum, mi non dictum suscipit.
                 </div>
-                <a class="flex h-[5em] px-[1.875em] justify-center items-center border-t border-[#1d373d] bg-transparent text-[0.8em] font-bold tracking-[0.25ch] uppercase">Contactanos</a>
+                <a p-on="click:goToContact" class="flex h-[5em] px-[1.875em] justify-center items-center border-t border-[#1d373d] bg-transparent text-[0.8em] font-bold tracking-[0.25ch] uppercase cursor-pointer">Contactanos</a>
             </div>
         </div>
 
@@ -325,13 +325,13 @@
             </div>
         </div>
     </div>
-    <div class="w-full px-[2em] flex max-w-[54.6666em] min-h-[6em] pt-[2em] justify-center items-end border-x border-[#d8e7eb]">
-        <a class="w-full min-w-[50%] h-[5em] text-[0.8em] relative z-50 flex mb-0 px-[1.875em] justify-center items-center grow-0 shrink-0 basis-auto bg-[#1386eb] text-white font-bold text-center tracking-[0.25ch] indent-[0.25ch] uppercase">Contactanos</a>
+    <div id="pricing" class="w-full px-[2em] flex max-w-[54.6666em] min-h-[6em] pt-[2em] justify-center items-end border-x border-[#d8e7eb]">
+        <a p-on="click:goToContact" class="w-full min-w-[50%] h-[5em] text-[0.8em] relative z-50 flex mb-0 px-[1.875em] justify-center items-center grow-0 shrink-0 basis-auto bg-[#1386eb] text-white font-bold text-center tracking-[0.25ch] indent-[0.25ch] uppercase cursor-pointer">Contactanos</a>
     </div>
     <div class="w-[2em] my-[2em] relative z-20 h-[1px] bg-[#1386eb] lg:my-[4em] lg:w-[4em]"></div>
 </section>
 
-<section id="pricing"  class="px-[2em] relative z-40 flex w-full flex-col justify-center items-center">
+<section  class="px-[2em] relative z-40 flex w-full flex-col justify-center items-center">
     <div class="w-full flex max-w-[54.6666em] min-h-[6em] pb-[2em] flex-col justify-between items-center border-x border-[#d8e7eb]">
         <div class="relative min-h-[4em] px-[1em]">
             <h2 class="relative z-10 mb-0 text-center text-[2.441em] mt-0 pt-[0.03125ch] font-['Anton'] leading-[1.067] font-semibold uppercase">Precios Mapisa</h2>
@@ -366,7 +366,7 @@
         </div>
     </div>
     <div class="w-full px-[2em] flex max-w-[54.6666em] min-h-[6em] pt-[2em] justify-center items-end border-x border-t border-[#d8e7eb]">
-        <a class="w-full min-w-[50%] h-[5em] text-[0.8em] relative z-50 flex mb-0 px-[1.875em] justify-center items-center grow-0 shrink-0 basis-auto bg-[#1386eb] text-white font-bold text-center tracking-[0.25ch] indent-[0.25ch] uppercase">Contactanos</a>
+        <a p-on="click:goToContact" class="w-full min-w-[50%] h-[5em] text-[0.8em] relative z-50 flex mb-0 px-[1.875em] justify-center items-center grow-0 shrink-0 basis-auto bg-[#1386eb] text-white font-bold text-center tracking-[0.25ch] indent-[0.25ch] uppercase cursor-pointer">Contactanos</a>
     </div>
     <div class="w-[2em] my-[2em] relative z-20 h-[1px] bg-[#1386eb] lg:my-[4em] lg:w-[4em]"></div>
 </section>
@@ -441,10 +441,10 @@
     <div class="py-[4em] relative z-20 flex w-full max-w-[90em] mb-[0px] flex-col bg-img-footer px-[2em] justify-center items-center lg:py-[8em]">
         <div class="absolute left-2/4 top-0 right-2/4 bottom-0 z-10 w-[1px] h-full bg-white opacity-20"></div>
         <div class="absolute top-2/4 bottom-2/4 z-10 w-full h-[1px] bg-white opacity-20"></div>
-        <form class="relative z-40 flex w-full h-auto max-w-[28em] flex-col items-center">
-            <input type="text" placeholder="Ingres tus nombres" class="w-full h-[4em] mb-0 px-[1.5em] border border-white text-[1em]">
-            <input type="text" placeholder="Ingres tus celular" class="w-full h-[4em] mb-0 px-[1.5em] border border-white text-[1em]">
-            <input type="submit" value="Suscríbete" class="w-full min-w-[8em] h-[5em] text-[0.8em] relative z-50 flex mb-0 px-[1.875em] justify-center items-center bg-[#1386eb] text-white grow-0 shrink-0 basis-auto font-bold text-center tracking-[0.25ch] uppercase whitespace-nowrap">
+        <form id="myForm" class="relative z-40 flex w-full h-auto max-w-[28em] flex-col items-center">
+            <input type="text" name="fullname" autocomplete="off" placeholder="Ingresa tus nombres" class="w-full h-[4em] mb-0 px-[1.5em] border border-white text-[1em]">
+            <input type="text" name="phone" autocomplete="off" maxlength="9" placeholder="Ingresa tu celular" class="w-full h-[4em] mb-0 px-[1.5em] border border-white text-[1em]">
+            <input type="submit" value="Suscríbete" class="w-full min-w-[8em] h-[5em] text-[0.8em] relative z-50 flex mb-0 px-[1.875em] justify-center items-center bg-[#1386eb] text-white grow-0 shrink-0 basis-auto font-bold text-center tracking-[0.25ch] uppercase whitespace-nowrap cursor-pointer">
         </form>
     </div>
     <div class="relative z-0 flex w-full max-w-[90em] flex-row items-center">
