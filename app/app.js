@@ -6,8 +6,9 @@ import swal from 'sweetalert';
 import {scrollToId} from './utils.js';
 import CountCar from "./components/count.car";
 import appStore from './shared/data-access/app-store/index';
+import ListServices from "./components/list.services";
 
-Pau.controller('Home', function (scope) {
+Pau.controller('Home', async function (scope) {
     scope.prices = [
         {
             id: 1,
@@ -200,6 +201,15 @@ Pau.controller('Home', function (scope) {
     ];
     scope.plainsPriceSelected = scope.prices[0].plains;
 
+    const url = `http://localhost/tpw_final/api/service`;
+    const response = await axios.get(url);
+
+    if (response.status == 200) {
+        appStore.dispatch('populateListServices', response.data.data)
+        const listServices = new ListServices();
+        listServices.render();
+    }
+
     scope.goToAbout = function () {
         scrollToId('about');
     }
@@ -270,9 +280,6 @@ Pau.controller('Home', function (scope) {
         submitForm.disabled = false;
         submitForm.innerText = 'Suscríbete';
     });
-
-    const countCar = new CountCar();
-    countCar.render();
 
 })
 

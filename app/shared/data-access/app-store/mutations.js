@@ -6,5 +6,10 @@ export default {
     clearCar(state, payload) {
         state.car.length = 0;
         return state;
-    }
+    },
+
+    populateListServices(state, payload) {
+        state.services = payload;
+        return state;
+    },
 }

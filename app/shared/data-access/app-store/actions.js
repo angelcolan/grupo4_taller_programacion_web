@@ -4,5 +4,9 @@ export default {
     },
     clearCar(context, payload) {
         context.commit('clearCar', payload);
-    }
+    },
+
+    populateListServices(context, payload) {
+        context.commit('populateListServices', payload);
+    },
 }
