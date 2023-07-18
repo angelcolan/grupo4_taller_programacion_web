@@ -249,14 +249,19 @@ Pau.controller('Home', function (scope) {
             return false;
         }
 
+        if (!formProps.email.length) {
+            swal("Uups!", "Necesitamos tu correo  ofrecerte promociones!", "error");
+            return false;
+        }
+
         const submitForm = document.getElementById("submitForm")
         submitForm.disabled = true;
         submitForm.innerText = 'Enviando....';
 
-        const url = `http://localhost:8080/contacts`;
+        const url = `http://localhost/tpw_final/api/contact`;
         const response = await axios.post(url, formProps);
 
-        if (response.data.data.code == 200) {
+        if (response.status == 200) {
             swal("Muy bien!", "Te enviamos un mensaje para poder orientarte!", "success");
             myForm.reset();
         } else {
