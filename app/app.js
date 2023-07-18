@@ -253,7 +253,7 @@ Pau.controller('Home', function (scope) {
         submitForm.disabled = true;
         submitForm.innerText = 'Enviando....';
 
-        const url = `http://localhost:8080/contacts/sendInfo`;
+        const url = `http://localhost:8080/contacts`;
         const response = await axios.post(url, formProps);
 
         if (response.data.data.code == 200) {
